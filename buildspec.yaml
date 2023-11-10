@@ -6,7 +6,7 @@ phases:
       - pip install -r requirements.txt  # If you have external dependencies, include them in requirements.txt
       - zip -r lambda-package.zip *
       - aws lambda update-function-code --function-name YourLambdaFunctionName --zip-file fileb://lambda-package.zip
-      - aws lambda invoke --function-name YourLambdaFunctionName --payload '{"key1":"value1", "key2":"value2"}' 
+      - aws lambda invoke --function-name YourLambdaFunctionName --payload '{"key1":"value1", "key2":"value2"}' > output.txt
 
 artifacts:
   files: lambda-package.zip
